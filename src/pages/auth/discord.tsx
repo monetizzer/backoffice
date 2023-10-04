@@ -6,10 +6,11 @@ export default function DiscordAuth() {
   const [params] = useSearchParams()
   const redirect = useNavigate()
   const { setAccessToken, setUserData } = useAuthContext()
-  const code = params.get('code')
 
   useEffect(() => {
     const login = async () => {
+      const code = params.get('code')
+
       if (
         !code ||
         typeof setAccessToken === 'undefined'
@@ -32,7 +33,7 @@ export default function DiscordAuth() {
           return;
         })
 
-      const { accountId, isAdmin } = await fetch(`${import.meta.env['VITE_API_URL']}/auth/iam`, {
+      const { accountId, isAdmin } = await fetch(`${import.meta.env['VITE_API_URL']}/accounts/iam`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -57,7 +58,7 @@ export default function DiscordAuth() {
 
     login();
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [code, setAccessToken])
+  }, [])
 
   return (
     <main>

@@ -5,6 +5,8 @@ export default function Home() {
     <AuthLayout>
       <main>
         Home
+        <br/>
+        <a href="/documents">documents</a>
       </main>
     </AuthLayout>
   )

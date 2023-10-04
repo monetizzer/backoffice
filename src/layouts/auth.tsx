@@ -13,15 +13,19 @@ export default function AuthLayout({ children }: any): ReactNode {
   const [isLoading, setIsLoading] = useState<boolean>(true)
 
   useEffect(() => {
-		const oldAccessToken = localStorage.getItem('access-token')
-		if (oldAccessToken) {
-			setAccessToken(oldAccessToken);
-		}
+    if (!accessToken) {
+      const oldAccessToken = localStorage.getItem('access-token')
+      if (oldAccessToken) {
+        setAccessToken(oldAccessToken);
+      }
+    }
 
-		const oldUserData = localStorage.getItem('user-data')
-		if (oldUserData) {
-			setUserData(JSON.parse(oldUserData));
-		}
+    if (!userData) {
+      const oldUserData = localStorage.getItem('user-data')
+      if (oldUserData) {
+        setUserData(JSON.parse(oldUserData));
+      }
+    }
 
     setIsLoading(false)
   // eslint-disable-next-line react-hooks/exhaustive-deps

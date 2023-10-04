@@ -5,6 +5,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Login from './pages/login.tsx'
 import Home from './pages/home.tsx'
 import DiscordAuth from './pages/auth/discord.tsx'
+import Documents from './pages/documents.tsx'
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <Home />
+  },
+  {
+    path: '/documents',
+    element: <Documents />
   },
 ]);
 
