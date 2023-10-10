@@ -6,6 +6,8 @@ import Login from './pages/login.tsx'
 import Home from './pages/home.tsx'
 import DiscordAuth from './pages/auth/discord.tsx'
 import Documents from './pages/documents.tsx'
+import Products from './pages/products.tsx'
+import Product from './pages/product.tsx'
 
 const router = createBrowserRouter([
   {
@@ -23,6 +25,14 @@ const router = createBrowserRouter([
   {
     path: '/documents',
     element: <Documents />
+  },
+  {
+    path: '/products',
+    element: <Products />
+  },
+  {
+    path: '/products/:productId',
+    element: <Product />
   },
 ]);
 

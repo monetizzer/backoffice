@@ -7,6 +7,8 @@ export default function Home() {
         Home
         <br/>
         <a href="/documents">documents</a>
+        <br/>
+        <a href="/products">products</a>
       </main>
     </AuthLayout>
   )
